@@ -1,6 +1,6 @@
-### 삼성 SW Expert Academy
+#### SW Algorithm 문제풀이 코드
 
-#### Programming 문제 코드
+#### Programming Site : Programmers, Samsung SW Expert Academy, etc.
 
 
 
