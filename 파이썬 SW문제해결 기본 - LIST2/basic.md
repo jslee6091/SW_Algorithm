@@ -12,7 +12,7 @@
 
 ### 부분 집합 구하기 1
 
-```
+```python
 bit = [0,0,0,0]
 for i in range(2):
 	bit[0] = i						# 0번째 원소
@@ -34,7 +34,7 @@ for i in range(2):
 
 ### 부분 집합 구하기 2
 
-```
+```python
 arr= [3,6,7,1,5,4]
 n = len(arr)
 
