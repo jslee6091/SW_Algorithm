@@ -108,7 +108,36 @@ for i in range(1<<n): # 1<<n: 부분 집합의 개수
 
 
 
+### k번째로 작은 원소 찾기
+
+```python
+def select(list, k):
+    for i in range(0,k):
+        minIndex = i
+        for j in range(i+1, len(list)):
+            if list[minIndex] > list[j]:
+                minIndex = j
+        list[i], list[minIndex] = list[minIndex], list[i]
+    return list[k-1]
+```
+
+- 1번부터 k번째까지 작은 원소들을 찾아 List의 앞쪽으로 이동시키고 List의 k번째를 반환
+- k가 비교적 작을때 유용하다.
+- 시간복잡도 : O(kn)
+
+
+
 ### 선택 정렬
+
+```python
+def selectionSort(a):
+    for i in range(0, len(a)-1):
+        min = i
+        for j in range(i+1, len(a)):
+            if a[min] > a[j]:
+                min = j
+        a[i], a[min] = a[min], a[i]
+```
 
 - 주어진 자료들 중 가장 작은 값의 원소부터 차례대로 선택하여 위치 교환
 - 셀렉션 알고리즘을 전체 자료에 적용한 것
