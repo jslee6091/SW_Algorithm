@@ -36,3 +36,36 @@ https://tothefullest08.github.io/algorithm/2019/03/07/3_4871_%EA%B7%B8%EB%9E%98%
 https://mungto.tistory.com/142
 ```
 
+
+
+미로 문제 참고:
+
+> 백트래킹
+
+```
+https://mungto.tistory.com/145
+```
+
+
+
+카드게임 문제 참고:
+
+> stack2의 3번째 문제
+
+```
+https://tothefullest08.github.io/algorithm/2019/03/08/1_4880_tournament/
+```
+
+
+
+
+
+배열 최소 합 문제 참고:
+
+> stack2의 4번째 문제
+
+```
+https://tothefullest08.github.io/algorithm/2019/03/08/2_4881_min_sum/
+https://mungto.tistory.com/147
+```
+

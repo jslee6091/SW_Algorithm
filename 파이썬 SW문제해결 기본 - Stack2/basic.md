@@ -135,6 +135,13 @@
                for i in range(ncandidates):
                    a[k] = c[i]
                    backtrack(a,k,input)
+       
+       def process_solution(a,k): # a의 원소 중 1인 값의 인덱스 출력
+           print("(", end="")
+           for i in range(k+1):
+               if a[i]:
+       			print(i, end="")
+           print(")")
        ```
 
    
