@@ -69,3 +69,13 @@ https://tothefullest08.github.io/algorithm/2019/03/08/2_4881_min_sum/
 https://mungto.tistory.com/147
 ```
 
+
+
+미로의 거리 문제 참고:
+
+> Queue의 2번째 문제
+
+```
+https://mungto.tistory.com/166
+```
+
