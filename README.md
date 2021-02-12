@@ -79,3 +79,13 @@ https://mungto.tistory.com/147
 https://mungto.tistory.com/166
 ```
 
+
+
+노드의 거리 문제 참고:
+
+> Queue의 4번째 문제
+
+```
+https://mungto.tistory.com/165
+```
+
