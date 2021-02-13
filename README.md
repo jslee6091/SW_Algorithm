@@ -89,3 +89,13 @@ https://mungto.tistory.com/166
 https://mungto.tistory.com/165
 ```
 
+
+
+수열 합치기 문제 참고:
+
+> LinkedList 2번째 문제
+
+```
+https://hongsj36.github.io/2020/01/26/IM_LinkedList/#5120-%EC%95%94%ED%98%B8-d4
+```
+
