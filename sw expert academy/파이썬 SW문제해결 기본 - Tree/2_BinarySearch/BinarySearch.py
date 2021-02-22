@@ -3,8 +3,26 @@ sys.stdin = open("BinarySearch_inputs.txt", 'r')
 
 T = int(input())
 
+
+class Tree:
+    def __init__(self, N):
+        self.lst = [0] * (N + 1)
+        self.N = N
+        self.cnt = 1
+        self.numbering(1)
+
+    def numbering(self, num):
+        if num <= N:
+            self.numbering(num*2)
+            self.lst[num] = self.cnt
+            self.cnt += 1
+            self.numbering(num * 2 + 1)
+
+    def result(self):
+        return ' '.join(map(str, (self.lst[1], self.lst[self.N//2])))
+
+
 for test_case in range(1, T + 1):
     N = int(input())
-
-    for i in range(1, N+1):
-
+    tree = Tree(N)
+    print(f'#{test_case} {tree.result()}')
