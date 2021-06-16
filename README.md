@@ -148,3 +148,9 @@ https://hongsj36.github.io/2020/01/26/IM_LinkedList/#5120-%EC%95%94%ED%98%B8-d4
 
 
 
+#### 미완성
+
+1. Advanced > 응용-시작 > 2_cipher2
+2. Advanced > 2-동적계획법소개 > 1_Tiles
+3. Advanced > 2-동적계획법소개 > 2_binomial
+4. Advanced > 응용-완전검색 > Balance
