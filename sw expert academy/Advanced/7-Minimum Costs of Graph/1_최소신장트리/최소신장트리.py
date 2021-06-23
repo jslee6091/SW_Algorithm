@@ -28,7 +28,7 @@ for test_case in range(1, T + 1):
     gajungchee.sort(key=lambda x: x[2])
 
     answer = 0
-    # 연결한 트리의 개수
+    # 간선의 개수
     tree_num = 0
     while gajungchee:
         # 모든 트리를 연결하면 더이상의 탐색을 중지하고 break -> 이거 안했더니 시간초과 발생했다.
@@ -40,7 +40,7 @@ for test_case in range(1, T + 1):
         if union_parent(u) != union_parent(v):
             union_find(u, v)
             answer += cost
-            # 탐색한 노드 한개 추가
+            # 간선 한개 추가
             tree_num += 1
 
     print(f'#{test_case} {answer}')
