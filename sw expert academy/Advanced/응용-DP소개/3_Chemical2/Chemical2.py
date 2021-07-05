@@ -54,6 +54,28 @@ def connect(mat, count):
     return
 
 
+def multiple_num(num, mul_num, matRix):
+    global answer
+
+    if mul_num < answer or not answer:
+        answer = mul_num
+
+    if num == len(matRix):
+        return
+
+    for k in range(len(matRix) - 1):
+        if not is_multiple[k]:
+            is_multiple[num][k] = 1
+            next_num = matRix[k][0] * matRix[k + 1][0] * matRix[k + 1][1]
+            temp_matrix = matRix
+            temp_matrix.remove(matRix[k + 1])
+            temp_matrix[k] = [matRix[k][0], matRix[k + 1][1]]
+            multiple_num(num + 1, mul_num + next_num, temp_matrix)
+            is_multiple[num][k] = 0
+
+    return
+
+
 for test_case in range(1, 1 + T):
     N = int(input())
     warehouse = [list(map(int, input().split())) for _ in range(N)]
@@ -74,22 +96,20 @@ for test_case in range(1, 1 + T):
             col += 1
         row += 1
 
-    print('arr : ', arr)
-
     is_visited = [0 for _ in range(len(arr))]
     get_equation = []
     connect((), 0)
-    print('get_equation : ', get_equation)
 
-    get_equation_convert = []
+    matrixMul = []
     for idx, var in enumerate(get_equation):
         if idx % 2 == 0:
-            get_equation_convert.append((var, get_equation[idx + 1]))
-    print('get_equation_convert : ', get_equation_convert)
+            matrixMul.append([var, get_equation[idx + 1]])
+    print('matrixMul : ', matrixMul)
 
-    multiple_check = []
-    for i in range(len(get_equation_convert)):
-
+    answer = 0
+    is_multiple = [[0 for _ in range(len(matrixMul) - 1 - i)] for i in range(len(matrixMul) - 1)]
+    multiple_num(0, 0, matrixMul)
+    print('minimum multiple : ', answer)
 
 
 
