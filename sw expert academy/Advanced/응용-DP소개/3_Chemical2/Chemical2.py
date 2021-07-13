@@ -5,8 +5,8 @@ T = int(input())
 
 
 # 1_FindMatrix 와 2_MetalRod 의 응용문제
-# 2차원 배열 내의 0이 아닌 수로 이루어진 행렬을 찾고 이들을 곱셈이 가능하도록 정렬한 후 곱셈 연산 수 구하기
-# 연산 순서를 다르게 해서 최소 연산수를 구하는 것이 목표
+# 2차원 배열 내의 0이 아닌 수로 이루어진 행렬을 찾고 이들을 곱셈이 가능하도록 정렬
+# 연쇄행렬 최소곱셈 알고리즘 적용하여 행렬의 최소곱셈수 구하기
 def getmatrix(y, x):
     x_size = 0
     y_size = 0
@@ -54,26 +54,30 @@ def connect(mat, count):
     return
 
 
-def multiple_num(num, mul_num, matRix):
-    global answer
+# 연쇄행렬 최소곱셈 알고리즘
+def min_multiple():
+    global get_equation
 
-    if mul_num < answer or not answer:
-        answer = mul_num
+    d = []
+    for idx, var in enumerate(get_equation):
+        if idx % 2 == 0 or idx == len(get_equation) - 1:
+            d.append(var)
 
-    if num == len(matRix):
-        return
+    # 행렬의 개수
+    size = len(get_equation) // 2
+    # 곱셈 수 저장 리스트
+    dp = [[0 for i in range(size)] for j in range(size)]
 
-    for k in range(len(matRix) - 1):
-        if not is_multiple[k]:
-            is_multiple[num][k] = 1
-            next_num = matRix[k][0] * matRix[k + 1][0] * matRix[k + 1][1]
-            temp_matrix = matRix
-            temp_matrix.remove(matRix[k + 1])
-            temp_matrix[k] = [matRix[k][0], matRix[k + 1][1]]
-            multiple_num(num + 1, mul_num + next_num, temp_matrix)
-            is_multiple[num][k] = 0
-
-    return
+    for i in range(size):
+        for j in range(size - i):
+            a = j
+            b = j + i
+            if a != b:
+                dp[a][b] = 987654
+                for k in range(a, b):
+                    dp[a][b] = min(dp[a][b], dp[a][k] + dp[k + 1][b] + d[j - 1] * d[k] * d[b])
+    
+    return dp[0][size - 1]
 
 
 for test_case in range(1, 1 + T):
@@ -98,18 +102,9 @@ for test_case in range(1, 1 + T):
 
     is_visited = [0 for _ in range(len(arr))]
     get_equation = []
+    # 행렬 곱셈을 위해 정렬
     connect((), 0)
 
-    matrixMul = []
-    for idx, var in enumerate(get_equation):
-        if idx % 2 == 0:
-            matrixMul.append([var, get_equation[idx + 1]])
-    print('matrixMul : ', matrixMul)
-
-    answer = 0
-    is_multiple = [[0 for _ in range(len(matrixMul) - 1 - i)] for i in range(len(matrixMul) - 1)]
-    multiple_num(0, 0, matrixMul)
-    print('minimum multiple : ', answer)
-
-
-
+    # 최소 곱셈 수 구하기
+    answer = min_multiple()
+    print(f'#{test_case} {answer}')
