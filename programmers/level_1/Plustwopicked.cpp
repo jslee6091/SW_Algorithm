@@ -47,5 +47,7 @@ int main(){
         cout << output2[i] << " ";
     }
     cout << endl;
+
+    return 0;
     
 }
